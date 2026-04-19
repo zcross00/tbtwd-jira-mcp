@@ -1,0 +1,16 @@
+[project]
+name = "tbtwd-jira-mcp"
+version = "0.1.0"
+description = "Token-efficient Jira MCP server for TBTWD agents"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "httpx>=0.27.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+tbtwd-jira-mcp = "tbtwd_jira_mcp.server:main"
