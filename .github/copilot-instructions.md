@@ -8,10 +8,11 @@ This workspace develops and uses the **tbtwd-obsidian** server — a persistent 
 
 ## Session Start Protocol
 
-1. **Always call `get_brief` first.** This returns the active project, goals, focus area, and backlog.
-2. **Query for relevant context** — use `get_relevant_context(topic)` for one-shot aggregation, or `search`/`query`/`get_context` for targeted lookups.
-3. **Load the component tree** — `query(entity_type="system", project="...")` to understand what exists in the active project.
-4. **Cite vault sources** — reference entity titles (e.g., "per [[Work Implementation]]") when your actions are informed by vault knowledge.
+1. **Connectivity check** — call `get_brief` and `list_backlog(project="SOV")` in parallel. If either fails, alert the user and do not proceed until the MCP server is restarted.
+2. **Orient from brief** — use the `get_brief` result to identify the active project, goals, focus area, and backlog.
+3. **Query for relevant context** — use `get_relevant_context(topic)` for one-shot aggregation, or `search`/`query`/`get_context` for targeted lookups.
+4. **Load the component tree** — `query(entity_type="system", project="...")` to understand what exists in the active project.
+5. **Cite vault sources** — reference entity titles (e.g., "per [[Work Implementation]]") when your actions are informed by vault knowledge.
 
 ## Context Recovery (After Compaction)
 
